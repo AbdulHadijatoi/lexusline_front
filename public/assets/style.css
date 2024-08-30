@@ -191,13 +191,13 @@ body{
   position: absolute;
   right: calc(100% - 40px);
   top: 80px;
-  height: 60px;
+  padding: 20px;
   width: 300px;
   background: #00397c;
-  border-radius: 6px;
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -210,14 +210,15 @@ body{
 }
 
 .search-box .input-box input{
-  position: absolute;
+  /* position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%; */
   border-radius: 4px;
-  transform: translate(-50%, -50%);
-  height: 35px;
-  width: 280px;
+  /* transform: translate(-50%, -50%); */
+  height: 40px;
+  width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: #f6f6f6;
   outline: none;
   padding: 0 15px;
   font-size: 16px;

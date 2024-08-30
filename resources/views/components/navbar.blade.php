@@ -43,9 +43,69 @@
         </ul>
     </div>
     <div class="search-box">
-    <i class='bx bx-search'></i>
-    <div class="input-box">
-        <input type="text" placeholder="Search...">
-    </div>
+        <i class='bx bx-search'></i>
+        <div class="input-box">
+            <input type="text" placeholder="Search...">
+
+            <p class="mt-4 text-lg font-medium text-gray-900">Our Services</p>
+
+            <ul class="mt-3 space-y-4 text-sm">
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('automotive-shipping') }}">
+                        Automotive Shipping 
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('dangerous-good-shipping') }}">
+                        Dangerous Good Shipping 
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('cargo-storage-solutions') }}">
+                        Cargo Storage Solutions 
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('exworks-solutions') }}">
+                        Exworks Solutions 
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-trading') }}">
+                        Container Trading 
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-bl-tracking') }}">
+                        Container / BL Tracking
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('client-reg-login') }}">
+                        Client Reg / Login
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('freight-rate') }}">
+                        Freight Rate Page
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('get-quote') }}">
+                        Get a Quote Page
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('general-tariff') }}">
+                        General Tariff Page
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('quick-payment') }}">
+                        Quick Payment Page
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

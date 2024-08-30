@@ -6,7 +6,7 @@
             </div>
 
             <p class="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
-            Lexus Container Line (UK) Ltd is an Container Shipping Line focusing on container shipping services across all major ports globally.
+            {{ settings()->footer_text }}
             </p>
 
             <ul class="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
@@ -121,67 +121,65 @@
             </div>
 
             <div class="text-center sm:text-left">
-            <p class="text-lg font-medium text-gray-900">Our Services</p>
+                <p class="text-lg font-medium text-gray-900">Our Services</p>
 
-            <ul class="mt-8 space-y-4 text-sm">
-                <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('automotive-shipping') }}">
-                    Automotive Shipping 
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('dangerous-good-shipping') }}">
-                    Dangerous Good Shipping 
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('cargo-storage-solutions') }}">
-                    Cargo Storage Solutions 
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('exworks-solutions') }}">
-                    Exworks Solutions 
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-trading') }}">
-                    Container Trading 
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-bl-tracking') }}">
-                    Container / BL Tracking
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('client-reg-login') }}">
-                    Client Reg / Login
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('freight-rate') }}">
-                    Freight Rate Page
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('get-quote') }}">
-                    Get a Quote Page
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('general-tariff') }}">
-                    General Tariff Page
-                </a>
-            </li>
-            <li>
-                <a class="text-gray-700 transition hover-text-secondary" href="{{ url('quick-payment') }}">
-                    Quick Payment Page
-                </a>
-            </li>
-
-                
-            </ul>
+                <ul class="mt-8 space-y-4 text-sm">
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('automotive-shipping') }}">
+                            Automotive Shipping 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('dangerous-good-shipping') }}">
+                            Dangerous Good Shipping 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('cargo-storage-solutions') }}">
+                            Cargo Storage Solutions 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('exworks-solutions') }}">
+                            Exworks Solutions 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-trading') }}">
+                            Container Trading 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-bl-tracking') }}">
+                            Container / BL Tracking
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('client-reg-login') }}">
+                            Client Reg / Login
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('freight-rate') }}">
+                            Freight Rate Page
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('get-quote') }}">
+                            Get a Quote Page
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('general-tariff') }}">
+                            General Tariff Page
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-gray-700 transition hover-text-secondary" href="{{ url('quick-payment') }}">
+                            Quick Payment Page
+                        </a>
+                    </li>
+                </ul>
             </div>
 
             <div class="text-center sm:text-left">
