@@ -8,6 +8,22 @@
 //   }
 // });
 
+function updateNavbarBackground() {
+  const navbar = document.querySelector('.nav');
+  
+  if (window.scrollY > 0) {
+      navbar.classList.add('scrolled');
+  } else {
+      navbar.classList.remove('scrolled');
+  }
+}
+
+// Check scroll position on page load
+document.addEventListener('DOMContentLoaded', updateNavbarBackground);
+
+// Update background on scroll
+window.addEventListener('scroll', updateNavbarBackground);
+
 
 // search-box open close js code
 let navbar = document.querySelector(".navbar");
