@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
     <link rel="stylesheet" href="{{ asset('assets/style.css') }}" />
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
 
-
-{{-- BLUE #00397c --}} 
-{{-- RED #eb493c --}} 
     @yield('styles') <!-- Section for additional page-specific styles -->
 </head>
 {{-- <body class="font-sans antialiased dark:bg-black dark:text-white/50"> --}}
@@ -35,6 +34,7 @@
     </footer>
 
     <script src="{{ asset('assets/script.js') }}"></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
     @yield('scripts') <!-- Section for additional page-specific scripts -->
 </body>
 </html>

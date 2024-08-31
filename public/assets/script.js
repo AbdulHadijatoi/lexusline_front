@@ -1,13 +1,3 @@
-
-// window.addEventListener('scroll', function() {
-//   console.log('scrolling');
-//   if (window.scrollY > 100) {
-//       document.querySelector('.nav').classList.add('white-nav');
-//   } else {
-//       document.querySelector('.nav').classList.remove('white-nav');
-//   }
-// });
-
 function updateNavbarBackground() {
   const navbar = document.querySelector('.nav');
   

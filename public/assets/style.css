@@ -32,6 +32,10 @@ body{
   background-color: #eb493c;
 }
 
+.hover-border-secondary:hover{
+  border-color: #eb493c;
+}
+
 .nav{
   position: fixed;
   top: 0;
@@ -358,3 +362,7 @@ body{
 }
 
 
+.dark [role=tab].active, .dark [role=tab].active:hover, [role=tab].active, [role=tab].active:hover{
+  border-color: rgb(23,37,84) !important;
+  color: rgb(23,37,84) !important;
+}
