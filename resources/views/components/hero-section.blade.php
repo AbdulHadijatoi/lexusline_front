@@ -10,7 +10,7 @@
                 <p class="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
                     {{ settings()->hero_text }}
                 </p>
-                <a href="#" aria-label="" class="bg-white text-gray-800 rounded-md px-5 py-3 inline-flex items-center tracking-wider transition-colors duration-200 hover-text-secondary">
+                <a href="#" aria-label="" class="bg-white text-gray-800 rounded-md px-5 h-11 inline-flex items-center tracking-wider transition-colors duration-200 hover-text-secondary">
                     {{ settings()->hero_btn_text }}
                 </a>
             </div>

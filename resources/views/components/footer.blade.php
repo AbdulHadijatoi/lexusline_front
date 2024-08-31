@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div>
             <div class="flex justify-center text-teal-600 sm:justify-start">
-                <img width="170px" src="{{ asset('assets/images/logo.png') }}" alt="logo" />
+                <a href="#"><img width="170px" src="{{ asset('assets/images/logo.png') }}" alt="logo" /></a>
             </div>
 
             <p class="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">

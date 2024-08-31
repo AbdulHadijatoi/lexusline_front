@@ -15,7 +15,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
-
+    
     @yield('styles') <!-- Section for additional page-specific styles -->
 </head>
 {{-- <body class="font-sans antialiased dark:bg-black dark:text-white/50"> --}}

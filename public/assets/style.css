@@ -78,7 +78,9 @@ body{
   color: #374151;
 }
 .nav .navbar .nav-links{
-  line-height: 70px;
+  /* line-height: 70px; */
+  display: flex;
+  align-items: center;
   height: 100%;
 }
 .nav .navbar .links{
@@ -213,21 +215,17 @@ body{
   color: #374151
 }
 
-.search-box .input-box input{
-  /* position: absolute;
-  top: 50%;
-  left: 50%; */
+.search-box .input-box input {
   border-radius: 4px;
-  /* transform: translate(-50%, -50%); */
   height: 40px;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: #f6f6f6;
-  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #f1efef;
   padding: 0 15px;
   font-size: 16px;
-  border: none;
+  outline: none; /* Removes the focus outline */
 }
+
 .navbar .nav-links .sidebar-logo{
   display: none;
 }

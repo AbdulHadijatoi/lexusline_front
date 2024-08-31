@@ -7,19 +7,19 @@
     <div class="nav-links">
         <div class="sidebar-logo">
             <span class="logo-name">
-            <img width="100px" src="{{ asset('assets/images/logo.png') }}" alt="logo" />
+            <a href="#"><img width="100px" src="{{ asset('assets/images/logo.png') }}" alt="logo" /></a>
             </span>
             <i class='bx bx-x'></i>
         </div>
         <ul class="links">
             <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('home') }}">Home</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary" href="{{ url('who-we-are') }}">Who we are</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary" href="{{ url('dry-cargo') }}">Dry Cargo</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary" href="{{ url('reefer-cargo') }}">Reefer Cargo</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary" href="{{ url('liquid-cargo') }}">Liquid Cargo</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary" href="{{ url('project-cargo') }}">Project Cargo</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-haulage') }}">Container Haulage</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary" href="{{ url('contact-us') }}">Contact Us</a></li>
+            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('who-we-are') }}">Who we are</a></li>
+            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('dry-cargo') }}">Dry Cargo</a></li>
+            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('reefer-cargo') }}">Reefer Cargo</a></li>
+            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('liquid-cargo') }}">Liquid Cargo</a></li>
+            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('project-cargo') }}">Project Cargo</a></li>
+            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('container-haulage') }}">Container Haulage</a></li>
+            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('contact-us') }}">Contact Us</a></li>
 
             {{-- <li>
                 <a href="#">HTML & CSS</a>
@@ -44,8 +44,8 @@
     </div>
     <div class="search-box">
         <i class='bx bx-search'></i>
-        <div class="input-box">
-            <input type="text" placeholder="Search...">
+        <div class="input-box rounded">
+            <input class="focus:border-red focus:outline-none focus:shadow-outline" type="text" placeholder="Search...">
 
             <p class="mt-4 text-lg font-medium text-gray-900">Our Services</p>
 
