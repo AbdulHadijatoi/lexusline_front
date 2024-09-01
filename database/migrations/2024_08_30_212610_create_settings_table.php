@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('hero_title')->nullable();
             $table->string('hero_text')->nullable();
             $table->string('hero_btn_text')->nullable();
+            $table->string('footer_text')->nullable();
+            $table->string('home_section_1_text')->nullable();
+            $table->string('home_insights_text')->nullable();
+            $table->string('choose_us_text')->nullable();
             
             $table->string('footer_text')->nullable();
             $table->timestamps();
