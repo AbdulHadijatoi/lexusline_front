@@ -29,7 +29,7 @@
         @yield('content')
     </main>
 
-    <footer class="bg-white">
+    <footer class="bg-white border-t border-gray-200">
         @include('components.footer')
     </footer>
 
