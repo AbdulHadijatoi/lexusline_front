@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div>
             <div class="flex justify-center text-teal-600 sm:justify-start">
-                <a href="#"><img width="170px" src="{{ asset('assets/images/logo.png') }}" alt="logo" /></a>
+                <a href="{{ url('/') }}"><img width="170px" src="{{ asset('assets/images/logo.png') }}" alt="logo" /></a>
             </div>
 
             <p class="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
@@ -298,13 +298,13 @@
         <p class="text-sm text-gray-500">
             <span class="block sm:inline">All rights reserved.</span>
 
-            <a href="#" class="inline-block underline transition text-gray-700 hover-text-secondary">
+            <a href="{{ url('terms-conditions') }}" class="inline-block underline transition text-gray-700 hover-text-secondary">
                 Terms & Conditions
             </a>
 
             <span>&middot;</span>
 
-            <a href="#" class="inline-block underline transition text-gray-700 hover-text-secondary">
+            <a href="{{ url('privacy-policy') }}" class="inline-block underline transition text-gray-700 hover-text-secondary">
                 Privacy Policy
             </a>
         </p>

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing-page');
-});
+})->name('home');
 
 
 Route::get('/who-we-are', [PageController::class, 'whoWeAre'])->name('who-we-are');
@@ -29,4 +29,5 @@ Route::get('/general-tariff', [PageController::class, 'generalTariff'])->name('g
 Route::get('/quick-payment', [PageController::class, 'quickPayment'])->name('quick-payment');
 
 Route::get('/terms-conditions', [PageController::class, 'termsConditions'])->name('terms-conditions');
+Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/blogs-news', [PageController::class, 'blogsNews'])->name('blogs-news');

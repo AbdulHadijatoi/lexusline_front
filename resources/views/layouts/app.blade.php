@@ -29,7 +29,7 @@
 </head>
 {{-- <body class="font-sans antialiased dark:bg-black dark:text-white/50"> --}}
 <body class="font-sans antialiased">
-    <div class="nav">
+    <div class="nav {{ Route::currentRouteName() !== 'home' ? 'light-nav' : '' }}">
         @include('components.navbar')
     </div>
 

@@ -54,28 +54,28 @@
     
     <div class="border-b mb-2">
         <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-            <li class="mr-2" role="presentation">
+            {{-- <li class="mr-2" role="presentation">
                 <button class="inline-block text-sm text-gray-700 hover:text-gray-800 hover:border-blue-950 active:border-blue-950 active:text-blue-950 rounded-t-lg p-4 text-center border-transparent border-b-2 active" id="tracking-tab" data-tabs-target="#tracking" type="button" role="tab" aria-controls="tracking" aria-selected="true">
                     Tracking
                 </button>
-            </li>
+            </li> --}}
             <li class="mr-2" role="presentation">
-                <button class="inline-block text-sm text-gray-700 hover:text-gray-800 hover:border-blue-950 active:border-blue-950 active:text-blue-950 rounded-t-lg p-4 text-center border-transparent border-b-2"
-                    id="schedule-tab" data-tabs-target="#schedule" type="button" role="tab" aria-controls="schedule" aria-selected="false">
+                <button class="inline-block text-sm text-gray-700 hover:text-gray-800 hover:border-blue-950 active:border-blue-950 active:text-blue-950 rounded-t-lg p-4 text-center border-transparent border-b-2 active"
+                    id="schedule-tab" data-tabs-target="#schedule" type="button" role="tab" aria-controls="schedule" aria-selected="true">
                     Schedule
                 </button>
             </li>
-            <li role="presentation">
+            {{-- <li role="presentation">
                 <button class="inline-block text-sm text-gray-700 hover:text-gray-800 hover:border-blue-950 active:border-blue-950 active:text-blue-950 rounded-t-lg p-4 text-center border-transparent border-b-2"
                     id="locations-tab" data-tabs-target="#locations" type="button" role="tab" aria-controls="locations" aria-selected="false">
                     Contacts
                 </button>
-            </li>
+            </li> --}}
         </ul>
     </div>
 
     <div id="myTabContent">
-        <div class="px-4 py-2 rounded-lg" id="tracking" role="tabpanel" aria-labelledby="tracking-tab">
+        {{-- <div class="px-4 py-2 rounded-lg" id="tracking" role="tabpanel" aria-labelledby="tracking-tab">
             <label for="tracking_code" class="inline-block mb-2">B/L or container number</label>
             <div class="relative w-full d-flex align-items-center">
                 <i class='bx bx-map absolute inset-y-0 left-0 mt-4 pl-3 text-gray-400 text-md'></i>
@@ -86,8 +86,8 @@
             <button type="button" class="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide transition duration-200 rounded bg-blue-950 hover:bg-blue-900 text-white">
                 Track
             </button>
-        </div>
-        <div class="px-4 py-2 rounded-lg hidden" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+        </div> --}}
+        <div class="px-4 py-2 rounded-lg" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
             
             <label for="origin" class="inline-block mb-2">From</label>
             <div class="relative w-full d-flex align-items-center">
@@ -107,13 +107,13 @@
                 Track
             </button>
         </div>
-        <div class="p-4 rounded-lg hidden" id="locations" role="tabpanel" aria-labelledby="locations-tab">
+        {{-- <div class="p-4 rounded-lg hidden" id="locations" role="tabpanel" aria-labelledby="locations-tab">
             <label for="search_location" class="inline-block mb-2">Search a location</label>
             <div class="relative w-full d-flex align-items-center">
                 <i class='bx bx-search absolute inset-y-0 left-0 mt-4 pl-3 text-gray-400 text-md'></i>
                 <input id="search_location" name="search_location" placeholder="Search a location" required type="text" 
                     class="w-full h-12 pl-10 pr-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded appearance-none focus:border-red-950 focus:outline-none focus:shadow-outline"/>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

@@ -1,7 +1,7 @@
 
 <div class="navbar">
     <i class='bx bx-menu'></i>
-    <div class="logo"><a href="#">
+    <div class="logo"><a href="{{ url('/') }}">
         <img width="140px" src="{{ asset('assets/images/logo.png') }}" alt="logo" />
     </a></div>
     <div class="nav-links">
@@ -12,7 +12,7 @@
             <i class='bx bx-x'></i>
         </div>
         <ul class="links">
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('home') }}">Home</a></li>
+            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('/') }}">Home</a></li>
             <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('who-we-are') }}">Who we are</a></li>
             <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('dry-cargo') }}">Dry Cargo</a></li>
             <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('reefer-cargo') }}">Reefer Cargo</a></li>

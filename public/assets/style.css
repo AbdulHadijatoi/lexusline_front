@@ -53,6 +53,13 @@ body{
 
 .nav.scrolled {
   background-color: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* transform: translateY(0); */
+}
+
+.nav.light-nav {
+  background-color: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   /* transform: translateY(0); */
 }
 
@@ -75,6 +82,9 @@ body{
   font-weight: 600;
 }
 .nav.scrolled .navbar .logo a{
+  color: #374151;
+}
+.nav.light-nav .navbar .logo a{
   color: #374151;
 }
 .nav .navbar .nav-links{
@@ -104,6 +114,9 @@ body{
 }
 
 .nav.scrolled .navbar .links li a{
+  color: #374151;
+}
+.nav.light-nav .navbar .links li a{
   color: #374151;
 }
 
@@ -182,6 +195,19 @@ body{
 }
 
 .nav.scrolled .navbar .search-box i{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: #374151;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav.light-nav .navbar .search-box i{
   position: absolute;
   height: 100%;
   width: 100%;
@@ -287,6 +313,9 @@ body{
     }
     
     .nav.scrolled .navbar .bx-menu, .sidebar-logo  i{
+      color: #374151;
+    }
+    .nav.light-nav .navbar .bx-menu, .sidebar-logo  i{
       color: #374151;
     }
   .nav .navbar .links{

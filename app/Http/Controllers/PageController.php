@@ -119,6 +119,12 @@ class PageController extends Controller
         $data = [];
         return view('pages.terms-conditions', $data);
     }
+    
+    public function privacyPolicy()
+    {
+        $data = [];
+        return view('pages.privacy-policy', $data);
+    }
 
     public function blogsNews()
     {
