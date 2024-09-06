@@ -4,8 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PageController extends Controller
-{
+class PageController extends Controller {
+    
+    public function homePage() {
+        $data = [];
+        return view('home-page', $data);
+    }
+    
+    public function CommonPage() {
+        $data = [];
+        return view('common-page', $data);
+    }
+    
     public function whoWeAre()
     {
         $data = [];

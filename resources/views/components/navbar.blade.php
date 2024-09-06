@@ -1,5 +1,5 @@
 
-<div class="navbar">
+<div class="navbar mx-auto px-5 md:px-0 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
     <i class='bx bx-menu'></i>
     <div class="logo"><a href="{{ url('/') }}">
         <img width="140px" src="{{ asset('assets/images/logo.png') }}" alt="logo" />
@@ -12,14 +12,11 @@
             <i class='bx bx-x'></i>
         </div>
         <ul class="links">
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('/') }}">Home</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('who-we-are') }}">Who we are</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('dry-cargo') }}">Dry Cargo</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('reefer-cargo') }}">Reefer Cargo</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('liquid-cargo') }}">Liquid Cargo</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('project-cargo') }}">Project Cargo</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('container-haulage') }}">Container Haulage</a></li>
-            <li><a class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2" href="{{ url('contact-us') }}">Contact Us</a></li>
+            @if(getMenu())
+                @foreach (getMenu() as $menu)
+                    <li><a href="{{ url($menu->slug) }}" class="text-gray-700 transition hover-text-secondary hover-border-secondary border-transparent border-b-2 {{ isActive($menu->slug) ? 'text-secondary border-secondary' : '' }}">{{ $menu->name }}</a></li>
+                @endforeach
+            @endif
 
             {{-- <li>
                 <a href="#">HTML & CSS</a>
@@ -50,61 +47,15 @@
             <p class="mt-4 text-lg font-medium text-gray-900">Our Services</p>
 
             <ul class="mt-3 space-y-4 text-sm">
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('automotive-shipping') }}">
-                        Automotive Shipping 
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('dangerous-good-shipping') }}">
-                        Dangerous Good Shipping 
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('cargo-storage-solutions') }}">
-                        Cargo Storage Solutions 
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('exworks-solutions') }}">
-                        Exworks Solutions 
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-trading') }}">
-                        Container Trading 
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('container-bl-tracking') }}">
-                        Container / BL Tracking
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('client-reg-login') }}">
-                        Client Reg / Login
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('freight-rate') }}">
-                        Freight Rate Page
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('get-quote') }}">
-                        Get a Quote Page
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('general-tariff') }}">
-                        General Tariff Page
-                    </a>
-                </li>
-                <li>
-                    <a class="text-gray-700 transition hover-text-secondary" href="{{ url('quick-payment') }}">
-                        Quick Payment Page
-                    </a>
-                </li>
+                @if(getMenu(2))
+                    @foreach (getMenu(2) as $menu)
+                        <li>
+                            <a class="text-gray-700 transition hover-text-secondary {{ isActive($menu->slug) ? 'text-secondary' : '' }}" href="{{ url($menu->slug) }}">
+                                {{ $menu->name }} 
+                            </a>
+                        </li>
+                    @endforeach
+                @endif
             </ul>
         </div>
     </div>

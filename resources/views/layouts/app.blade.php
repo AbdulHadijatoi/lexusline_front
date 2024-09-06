@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Dynamic Title with Default Fallback -->
-    <title>@yield('title', 'Lexusline')</title>
+    <title>@yield('title', getPageName())</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url('favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url('favicon/favicon-32x32.png') }}">
@@ -25,7 +24,8 @@
     
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
 
-    @yield('styles') <!-- Section for additional page-specific styles -->
+    @yield('styles')
+
 </head>
 {{-- <body class="font-sans antialiased dark:bg-black dark:text-white/50"> --}}
 <body class="font-sans antialiased">
@@ -33,8 +33,13 @@
         @include('components.navbar')
     </div>
 
-    <!-- Main Content -->
     <main>
+        @if(count(request()->segments()) == 0)
+            @include('components.hero-section')
+        @else
+            @include('components.hero-common')
+        @endif
+
         @yield('content')
     </main>
 
@@ -44,6 +49,7 @@
 
     <script src="{{ asset('assets/script.js') }}"></script>
     <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
-    @yield('scripts') <!-- Section for additional page-specific scripts -->
+    
+    @yield('scripts')
 </body>
 </html>

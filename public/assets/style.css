@@ -17,7 +17,7 @@ body{
 }
 
 .text-secondary{
-  color: #eb493c;
+  color: #eb493c !important;
 }
 
 .bg-secondary{
@@ -34,6 +34,10 @@ body{
 
 .hover-border-secondary:hover{
   border-color: #eb493c;
+}
+
+.border-secondary{
+  border-color: #eb493c !important;
 }
 
 .nav{
@@ -66,14 +70,14 @@ body{
 
 .nav .navbar{
   height: 100%;
-  max-width: 1250px;
+  /* max-width: 1250px; */
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: auto;
   /* background: red; */
-  padding: 0 50px;
+  /* padding: 0 50px; */
 }
 .navbar .logo a{
   font-size: 30px;

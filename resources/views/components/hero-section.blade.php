@@ -1,5 +1,5 @@
 <div class="relative mx-auto">
-    <img src="{{ url(settings()->hero_image) }}" class="absolute inset-0 object-cover w-full h-full" alt="hero_image" />
+    <img src="{{ url(getHeroImage()) }}" class="absolute inset-0 object-cover w-full h-full" alt="hero_image" />
     <div class="relative bg-gray-900 bg-opacity-75">
         <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div class="flex flex-col items-center justify-between xl:flex-row sm:min-h-[25rem] md:min-h-[35rem]">

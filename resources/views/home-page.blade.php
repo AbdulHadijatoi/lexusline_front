@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page') <!-- This will override the default title -->
+
 
 @section('content')
-    @include('components.hero-section')
+    
     
     {{-- SECTION 1 --}}
     <div class="mx-auto px-5 md:px-0 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 py-10">
