@@ -44,3 +44,4 @@ Route::get('/quick-payment', [PageController::class, 'quickPayment'])->name('qui
 Route::get('/terms-conditions', [PageController::class, 'termsConditions'])->name('terms-conditions');
 Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/blogs-news', [PageController::class, 'blogsNews'])->name('blogs-news');
+Route::get('/blogs-news/1', [PageController::class, 'blogsDetails'])->name('blogs-news');

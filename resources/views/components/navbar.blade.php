@@ -1,5 +1,5 @@
 
-<div class="navbar mx-auto px-5 md:px-0 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+<div class="navbar mx-auto md:px-0 sm:max-w-xl md:max-w-full lg:max-w-screen-xl px-5">
     <i class='bx bx-menu'></i>
     <div class="logo"><a href="{{ url('/') }}">
         <img width="140px" src="{{ asset('assets/images/logo.png') }}" alt="logo" />

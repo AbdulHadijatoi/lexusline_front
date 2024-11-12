@@ -76,7 +76,7 @@ if (!function_exists('getHeroText')) {
             return $pageSetting->description;
         }
         
-        return 'With truly integrated logistics there’s always a new way to keep your goods moving and your business growing.';
+        return false;
     }
 }
 

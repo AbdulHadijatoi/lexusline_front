@@ -141,4 +141,10 @@ class PageController extends Controller {
         $data = [];
         return view('pages.blogs-news', $data);
     }
+    
+    public function blogsDetails()
+    {
+        $data = [];
+        return view('pages.blog-details', $data);
+    }
 }

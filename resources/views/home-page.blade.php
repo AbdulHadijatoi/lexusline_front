@@ -6,7 +6,7 @@
     
     
     {{-- SECTION 1 --}}
-    <div class="mx-auto px-5 md:px-0 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 py-10">
+    <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl py-10 px-5">
         <div class="max-w-3xl mb-10">
             <h1 class="text-3xl sm:text-4xl font-light text-gray-800 mb-6">
                 Logistics solutions

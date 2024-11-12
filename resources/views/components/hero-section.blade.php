@@ -1,7 +1,7 @@
 <div class="relative mx-auto">
     <img src="{{ url(getHeroImage()) }}" class="absolute inset-0 object-cover w-full h-full" alt="hero_image" />
     <div class="relative bg-gray-900 bg-opacity-75">
-        <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl px-5 lg:py-20">
         <div class="flex flex-col items-center justify-between xl:flex-row sm:min-h-[25rem] md:min-h-[35rem]">
             <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                 <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
