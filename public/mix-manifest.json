@@ -1,0 +1,11 @@
+{
+    "/js/laravel.app.js": "/admin/js/laravel.app.js",
+    "/js/oneui.app.js": "/admin/js/oneui.app.js",
+    "/js/pages/tables_datatables.js": "/admin/js/pages/tables_datatables.js",
+    "/css/themes/modern.css": "/admin/css/themes/modern.css",
+    "/css/themes/flat.css": "/admin/css/themes/flat.css",
+    "/css/themes/city.css": "/admin/css/themes/city.css",
+    "/css/themes/amethyst.css": "/admin/css/themes/amethyst.css",
+    "/css/oneui.css": "/admin/css/oneui.css",
+    "/css/themes/smooth.css": "/admin/css/themes/smooth.css"
+}

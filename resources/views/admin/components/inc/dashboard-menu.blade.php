@@ -1,0 +1,68 @@
+<nav id="sidebar" aria-label="Main Navigation">
+    <div class="content-header">
+        <a class="font-semibold text-dual" href="/">
+            <span class="smini-visible">
+                <i class="fa fa-circle-notch text-primary"></i>
+            </span>
+            <span class="smini-hide fs-5 tracking-wider">LEXUSLINE</span>
+        </a>
+       
+        <div>
+            <a class="d-lg-none btn btn-sm btn-alt-secondary ms-1" data-toggle="layout" data-action="sidebar_close" href="javascript:void(0)">
+                <i class="fa fa-fw fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="js-sidebar-scroll">
+        <div class="content-side">
+            <ul class="nav-main">
+                <li class="nav-main-item">
+                    <a class="nav-main-link{{ request()->is('admin/dashboard') ? ' active' : '' }}" href="/admin/dashboard">
+                        <i class="nav-main-link-icon si si-cursor"></i>
+                        <span class="nav-main-link-name">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="nav-main-heading">Blogs</li>
+                <li class="nav-main-item">
+                    <a href="#" class="nav-main-link{{ request()->is('blogs') ? ' active' : '' }}" href="#">
+                        <i class="nav-main-link-icon fa fa-list"></i>
+                        <span class="nav-main-link-name">Blogs</span>
+                    </a>
+                </li>
+                
+                <li class="nav-main-heading">System</li>
+                <li class="nav-main-item">
+                    <a href="#" class="nav-main-link{{ request()->is('settings') ? ' active' : '' }}" href="#">
+                        <i class="nav-main-link-icon fa fa-wrench"></i>
+                        <span class="nav-main-link-name">Settings</span>
+                    </a>
+                </li>
+                
+                <li class="nav-main-heading">Page Setting</li>
+                <li class="nav-main-item open">
+                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
+                        <i class="nav-main-link-icon si si-energy"></i>
+                        <span class="nav-main-link-name">Pages</span>
+                    </a>
+                    <ul class="nav-main-submenu">
+                        @foreach (getAllPages() as $page)    
+                            <li class="nav-main-item">
+                                <a href="{{ url('/admin/page-setting/'.$page->slug) }}" class="nav-main-link{{ request()->is('/admin/page-setting/'.$page->slug) ? ' active' : '' }}" href="#">
+                                    <span class="nav-main-link-name">{{ $page->title }}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
+
+                
+
+
+                
+            </ul>
+        </div>
+    </div>
+</nav>

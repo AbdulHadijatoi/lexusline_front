@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminPageSettingController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,3 +47,24 @@ Route::get('/terms-conditions', [PageController::class, 'termsConditions'])->nam
 Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/blogs-news', [PageController::class, 'blogsNews'])->name('blogs-news');
 Route::get('/blogs-news/1', [PageController::class, 'blogsDetails'])->name('blogs-news');
+
+
+Route::middleware('guest')->group(function () {
+    Route::get('admin/access', [LoginController::class,'showAdminLogin'])->name('login');
+    Route::post('login-post', [LoginController::class,'login'])->name('loginPost');
+});
+
+
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+    
+    Route::group(['prefix'=>'page-setting'], function () {
+        Route::get('/{slug}', [AdminPageSettingController::class,'index'])->name('pageSetting.index');
+        Route::put('/{slug}/update', [AdminPageSettingController::class,'update'])->name('pageSetting.update');
+    });
+
+
+    Route::post('logout', [LoginController::class,'logout'])->name('logout');
+});

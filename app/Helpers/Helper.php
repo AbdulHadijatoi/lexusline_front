@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Menu;
-use App\Models\PageSetting;
+use App\Models\Page;
 use App\Models\Setting;
 
 if (!function_exists('settings')) {
@@ -21,10 +21,10 @@ if (!function_exists('getPageName')) {
             $pageSlug = "home";
         }
 
-        $pageSetting = PageSetting::where("slug",$pageSlug)->first();
+        $page = Page::where("slug",$pageSlug)->first();
         
-        if($pageSetting){
-            return $pageSetting->title;
+        if($page){
+            return $page->title;
         }
         
         return ucwords(str_replace('-', ' ', $pageSlug));
@@ -41,10 +41,10 @@ if (!function_exists('getHeroImage')) {
             $pageSlug = "home";
         }
 
-        $pageSetting = PageSetting::where("slug",$pageSlug)->first();
+        $page = Page::where("slug",$pageSlug)->first();
         
-        if($pageSetting){
-            return $pageSetting->hero_image;
+        if($page){
+            return $page->hero_image;
         }
         
         return 'storage/uploads/hero_image.png';
@@ -70,10 +70,10 @@ if (!function_exists('getHeroText')) {
             $pageSlug = "home";
         }
 
-        $pageSetting = PageSetting::where("slug",$pageSlug)->first();
+        $page = Page::where("slug",$pageSlug)->first();
         
-        if($pageSetting){
-            return $pageSetting->description;
+        if($page){
+            return $page->description;
         }
         
         return false;
@@ -85,6 +85,16 @@ if (!function_exists('getMenu')) {
         $menus = Menu::where("menu_type_id",$menu_type_id)->get();
         
         return $menus; 
+    }
+}
+
+if (!function_exists('getAllPages')) {
+    function getAllPages() {
+        $pages = Page::where('slug', '!=', 'blogs-news')
+                    ->where('slug', '!=', '/')
+                    ->get();
+        
+        return $pages; 
     }
 }
 
