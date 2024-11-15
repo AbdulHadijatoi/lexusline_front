@@ -65,7 +65,7 @@ if (!function_exists('getHeroImage')) {
         $page = Page::where("slug",$pageSlug)->first();
         
         if($page){
-            return $page->hero_image;
+            return $page->image_url;
         }
         
         return 'storage/uploads/hero_image.png';
