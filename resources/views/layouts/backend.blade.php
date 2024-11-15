@@ -24,6 +24,9 @@
         @yield('css_before')
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" id="css-main" href="{{ mix('/css/oneui.css') }}">
+        
+        <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+
 
         @yield('css_after')
      
@@ -94,6 +97,7 @@
     <script src="{{asset('admin/js/plugins/jquery.maskedinput/jquery.maskedinput.min.js')}}"></script>
     <script src="{{asset('admin/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
     <script src="{{asset('admin/js/plugins/dropzone/min/dropzone.min.js')}}"></script>
+
 
     <!-- Page JS Helpers (Flatpickr + BS Datepicker + BS Maxlength + Select2 + Masked Inputs + Ion Range Slider + BS Colorpicker plugins) -->
     <script>One.helpersOnLoad(['js-flatpickr', 'jq-datepicker', 'jq-maxlength', 'jq-select2', 'jq-masked-inputs', 'jq-rangeslider', 'jq-colorpicker']);</script>

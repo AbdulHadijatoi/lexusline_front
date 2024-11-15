@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Blog extends Model
 {
@@ -11,11 +12,18 @@ class Blog extends Model
 
     protected $guarded = [];
 
+    protected $appends = ['image_url'];
+
+    public function getImageUrlAttribute()
+    {
+        return $this->image ? url(Storage::url($this->image)) : null;
+    }
+    
     public function blogContents(){
-        return $this->hasMany(Blog::class, 'blog_id');
+        return $this->hasMany(BlogContent::class, 'blog_id');
     }
     
     public function blogContent(){
-        return $this->hasOne(Blog::class, 'blog_id')->latest('id');
+        return $this->hasOne(BlogContent::class, 'blog_id')->latest('id');
     }
 }

@@ -25,24 +25,31 @@
                     </a>
                 </li>
 
-                <li class="nav-main-heading">Blogs</li>
+                <li class="nav-main-heading">Blogs & News</li>
                 <li class="nav-main-item">
-                    <a href="#" class="nav-main-link{{ request()->is('blogs') ? ' active' : '' }}" href="#">
+                    <a href="{{ route('admin.blogs.index') }}" class="nav-main-link{{ request()->is('admin/blogs*') ? ' active' : '' }}" href="#">
                         <i class="nav-main-link-icon fa fa-list"></i>
                         <span class="nav-main-link-name">Blogs</span>
                     </a>
                 </li>
                 
+                <li class="nav-main-item">
+                    <a href="{{ route('admin.settings.edit') }}" class="nav-main-link{{ request()->is('admin/subscribers*') ? ' active' : '' }}" href="#">
+                        <i class="nav-main-link-icon fa fa-wrench"></i>
+                        <span class="nav-main-link-name">Subscribers</span>
+                    </a>
+                </li>
+                
                 <li class="nav-main-heading">System</li>
                 <li class="nav-main-item">
-                    <a href="#" class="nav-main-link{{ request()->is('settings') ? ' active' : '' }}" href="#">
+                    <a href="{{ route('admin.settings.edit') }}" class="nav-main-link{{ request()->is('admin/settings*') ? ' active' : '' }}" href="#">
                         <i class="nav-main-link-icon fa fa-wrench"></i>
-                        <span class="nav-main-link-name">Settings</span>
+                        <span class="nav-main-link-name">Home Settings</span>
                     </a>
                 </li>
                 
                 <li class="nav-main-heading">Page Setting</li>
-                <li class="nav-main-item open">
+                <li class="nav-main-item {{ Request::is('admin/page-setting*') ? 'open' : '' }}">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                         <i class="nav-main-link-icon si si-energy"></i>
                         <span class="nav-main-link-name">Pages</span>
@@ -50,7 +57,7 @@
                     <ul class="nav-main-submenu">
                         @foreach (getAllPages() as $page)    
                             <li class="nav-main-item">
-                                <a href="{{ url('/admin/page-setting/'.$page->slug) }}" class="nav-main-link{{ request()->is('/admin/page-setting/'.$page->slug) ? ' active' : '' }}" href="#">
+                                <a href="{{ url('/admin/page-setting/'.$page->slug) }}" class="nav-main-link{{ request()->is('admin/page-setting/'.$page->slug) ? ' active' : '' }}" href="#">
                                     <span class="nav-main-link-name">{{ $page->title }}</span>
                                 </a>
                             </li>

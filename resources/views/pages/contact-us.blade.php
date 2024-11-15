@@ -4,7 +4,7 @@
 
 @section('content')
     
-    <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl py-10 px-5">
+    <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl py-10 px-5 page-content">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
             @include('components.card2', [
                 'card_image' => 'storage/uploads/contact_us_image1.png',

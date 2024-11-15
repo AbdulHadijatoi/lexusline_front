@@ -4,7 +4,7 @@
 
 @section('content')
     
-    <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl py-10 px-5">
+    <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl py-10 px-5 page-content">
         <div class="container mx-auto px-4 py-8">
             <!-- Blog Image and Meta Data -->
             <div class="mb-6">

@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\AdminPageSettingController;
+use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BlogAdminController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PageSettingController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -61,9 +63,21 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     })->name('dashboard');
     
     Route::group(['prefix'=>'page-setting'], function () {
-        Route::get('/{slug}', [AdminPageSettingController::class,'index'])->name('pageSetting.index');
-        Route::put('/{slug}/update', [AdminPageSettingController::class,'update'])->name('pageSetting.update');
+        Route::get('/{slug}', [PageSettingController::class,'index'])->name('pageSetting.index');
+        Route::put('/{slug}/update', [PageSettingController::class,'update'])->name('pageSetting.update');
     });
+    
+    Route::group(['prefix'=>'blogs'], function () {
+        Route::get('/', [BlogAdminController::class,'index'])->name('blogs.index');
+        Route::get('/create', [BlogAdminController::class,'create'])->name('blogs.create');
+        Route::post('/store', [BlogAdminController::class,'store'])->name('blogs.store');
+        Route::get('/{slug}', [BlogAdminController::class,'edit'])->name('blogs.edit');
+        Route::put('/{slug}/update', [BlogAdminController::class,'update'])->name('blogs.update');
+        Route::put('/{slug}/delete', [BlogAdminController::class,'delete'])->name('blogs.delete');
+    });
+
+    Route::get('settings/edit', [AdminSettingController::class, 'edit'])->name('settings.edit');
+    Route::put('settings/update', [AdminSettingController::class, 'update'])->name('settings.update');
 
 
     Route::post('logout', [LoginController::class,'logout'])->name('logout');
