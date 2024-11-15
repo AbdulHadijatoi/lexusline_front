@@ -56,7 +56,7 @@ if (!function_exists('getHeroImage')) {
     function getHeroImage() {
         $pageSlug = request()->segments();
 
-        if (count($pageSlug) > 1) {
+        if (count($pageSlug) > 0) {
             $pageSlug = request()->segment(count($pageSlug));
         } else {
             $pageSlug = "home";
