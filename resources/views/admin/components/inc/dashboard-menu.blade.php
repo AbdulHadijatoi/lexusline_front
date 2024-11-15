@@ -34,8 +34,8 @@
                 </li>
                 
                 <li class="nav-main-item">
-                    <a href="{{ route('admin.settings.edit') }}" class="nav-main-link{{ request()->is('admin/subscribers*') ? ' active' : '' }}" href="#">
-                        <i class="nav-main-link-icon fa fa-wrench"></i>
+                    <a href="{{ route('admin.subscribers.index') }}" class="nav-main-link{{ request()->is('admin/subscribers*') ? ' active' : '' }}" href="#">
+                        <i class="nav-main-link-icon fa fa-users"></i>
                         <span class="nav-main-link-name">Subscribers</span>
                     </a>
                 </li>

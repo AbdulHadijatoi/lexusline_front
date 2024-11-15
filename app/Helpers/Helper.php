@@ -112,6 +112,7 @@ if (!function_exists('getMenu')) {
 if (!function_exists('getAllPages')) {
     function getAllPages() {
         $pages = Page::where('slug', '!=', 'blogs-news')
+                    ->where('slug', '!=', 'contact-us')
                     ->where('slug', '!=', '/')
                     ->get();
         

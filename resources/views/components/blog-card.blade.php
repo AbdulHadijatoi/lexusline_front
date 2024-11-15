@@ -1,6 +1,6 @@
 <div class="w-full mx-auto mb-10 md:mb-0">
     <div>
-        <img src="{{ url($card_image) }}" alt="" class="rounded-t bg-center shadow-2xl w-full object-cover h-[14rem]"/>
+        <img src="{{ $card_image }}" alt="" class="rounded-t bg-center shadow-2xl w-full object-cover h-[14rem]"/>
         <div class="bg-white shadow rounded-b min-h-[10rem]">
             <div class="px-4">
                 <h2 class="text-gray-700 text-xl font-medium pt-6">{!! $card_title !!}</h2>

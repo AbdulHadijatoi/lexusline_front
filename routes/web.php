@@ -3,8 +3,10 @@
 use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogAdminController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PageSettingController;
+use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,6 +34,7 @@ Route::get('/liquid-cargo', [PageController::class, 'liquidCargo'])->name('liqui
 Route::get('/project-cargo', [PageController::class, 'projectCargo'])->name('project-cargo');
 Route::get('/container-haulage', [PageController::class, 'containerHaulage'])->name('container-haulage');
 Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contact-us');
+Route::post('/subscriber', [SubscriberController::class, 'subscribe'])->name('subscribe');
 
 Route::get('/automotive-shipping', [PageController::class, 'automotiveShipping'])->name('automotive-shipping');
 Route::get('/dangerous-good-shipping', [PageController::class, 'dangerousGoodShipping'])->name('dangerous-good-shipping');
@@ -47,8 +50,13 @@ Route::get('/quick-payment', [PageController::class, 'quickPayment'])->name('qui
 
 Route::get('/terms-conditions', [PageController::class, 'termsConditions'])->name('terms-conditions');
 Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
-Route::get('/blogs-news', [PageController::class, 'blogsNews'])->name('blogs-news');
-Route::get('/blogs-news/1', [PageController::class, 'blogsDetails'])->name('blogs-news');
+// Route::get('/blogs-news', [PageController::class, 'blogsNews'])->name('blogs-news');
+// Route::get('/blogs-news/1', [PageController::class, 'blogsDetails'])->name('blogs-news');
+
+Route::group(['prefix'=>'blogs-news'], function () {
+    Route::get('/', [BlogController::class,'index'])->name('blogs.index');
+    Route::get('/{slug}', [BlogController::class,'show'])->name('blogs.show');
+});
 
 
 Route::middleware('guest')->group(function () {
@@ -79,6 +87,10 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('settings/edit', [AdminSettingController::class, 'edit'])->name('settings.edit');
     Route::put('settings/update', [AdminSettingController::class, 'update'])->name('settings.update');
 
+    Route::prefix('subscribers')->group(function () {
+        Route::get('/', [SubscriberController::class, 'index'])->name('subscribers.index');
+        Route::delete('/{subscriber}', [SubscriberController::class, 'destroy'])->name('subscribers.destroy');
+    });
 
     Route::post('logout', [LoginController::class,'logout'])->name('logout');
 });

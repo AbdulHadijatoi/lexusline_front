@@ -23,7 +23,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
-     
+     <style>
+        .page-content ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style-type: disc;
+            gap: 0.5rem; /* for gap-2 */
+        }
+
+        .blog-content-description+p{
+            text-align: justify !important;
+        }
+    </style>
     @yield('styles')
 
 </head>

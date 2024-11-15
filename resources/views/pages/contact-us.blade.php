@@ -44,7 +44,8 @@
                 <h2 class="text-3xl font-semibold mb-4">Sign up for our logistics newsletters</h2>
                 <p class="text-gray-600 mb-6">Receive news and insights that help you navigate supply chains, understand industry trends, and shape your logistics strategy.</p>
                 
-                <form class="space-y-4">
+                <form class="space-y-4" method="POST" action="{{ route('subscribe') }}">
+                    @csrf
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
                         <div class="mt-1 relative rounded-md shadow-sm">

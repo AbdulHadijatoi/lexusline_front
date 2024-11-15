@@ -1,5 +1,5 @@
 <div class="w-full mx-auto mb-10 md:mb-0">
-    <a href="{{ url($card_link ?? '#') }}">
+    <div>
         <img src="{{ url($card_image) }}" alt="" class="rounded-t shadow-2xl w-full object-cover"/>
         <div class="bg-white shadow rounded-b min-h-[10rem]">
             <div class="px-4">
@@ -12,5 +12,5 @@
                 </div>
             @endif
         </div>
-    </a>
+    </div>
 </div>
