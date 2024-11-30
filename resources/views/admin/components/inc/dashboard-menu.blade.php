@@ -25,6 +25,33 @@
                     </a>
                 </li>
 
+                 <!-- Tracking Section -->
+                <li class="nav-main-heading">Tracking Management</li>
+                <li class="nav-main-item">
+                    <a href="{{ route('admin.ports.index') }}" class="nav-main-link{{ request()->is('admin/ports') ? ' active' : '' }}">
+                        <i class="nav-main-link-icon fa fa-anchor"></i>
+                        <span class="nav-main-link-name">Manage Ports</span>
+                    </a>
+                </li>
+                <li class="nav-main-item">
+                    <a href="{{ route('admin.terminals.index') }}" class="nav-main-link{{ request()->is('admin/terminals') ? ' active' : '' }}">
+                        <i class="nav-main-link-icon fa fa-terminal"></i>
+                        <span class="nav-main-link-name">Manage Terminals</span>
+                    </a>
+                </li>
+                <li class="nav-main-item">
+                    <a href="{{ route('admin.vessel-trackings.index') }}" class="nav-main-link{{ request()->is('admin/vessel-trackings') ? ' active' : '' }}">
+                        <i class="nav-main-link-icon fa fa-ship"></i>
+                        <span class="nav-main-link-name">Vessel Trackings</span>
+                    </a>
+                </li>
+                <li class="nav-main-item">
+                    <a href="{{ route('admin.container-trackings.index') }}" class="nav-main-link{{ request()->is('admin/container-trackings') ? ' active' : '' }}">
+                        <i class="nav-main-link-icon fa fa-box"></i>
+                        <span class="nav-main-link-name">Container Trackings</span>
+                    </a>
+                </li>
+
                 <li class="nav-main-heading">Blogs & News</li>
                 <li class="nav-main-item">
                     <a href="{{ route('admin.blogs.index') }}" class="nav-main-link{{ request()->is('admin/blogs*') ? ' active' : '' }}" href="#">

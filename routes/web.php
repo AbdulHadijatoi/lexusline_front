@@ -4,9 +4,14 @@ use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogAdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContainerTrackingController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PageSettingController;
+use App\Http\Controllers\PortController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\TerminalController;
+use App\Http\Controllers\TrackingController;
+use App\Http\Controllers\VesselTrackingController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -64,6 +69,10 @@ Route::middleware('guest')->group(function () {
     Route::post('login-post', [LoginController::class,'login'])->name('loginPost');
 });
 
+Route::get('/vessel-schedule', [TrackingController::class, 'vesselSchedule'])->name('vesselSchedule');
+
+Route::get('/ports/search', [TrackingController::class, 'searchPort'])->name('ports.search');
+
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
@@ -93,4 +102,11 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     });
 
     Route::post('logout', [LoginController::class,'logout'])->name('logout');
+
+    // Route::resource('container-trackings', ContainerTrackingController::class);
+    Route::resource('ports', PortController::class);
+    Route::resource('terminals', TerminalController::class);
+    Route::resource('vessel-trackings', VesselTrackingController::class);
+    Route::resource('container-trackings', ContainerTrackingController::class);
+
 });
