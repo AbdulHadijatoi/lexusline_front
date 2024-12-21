@@ -46,7 +46,6 @@ Route::get('/dangerous-good-shipping', [PageController::class, 'dangerousGoodShi
 Route::get('/cargo-storage-solutions', [PageController::class, 'cargoStorageSolutions'])->name('cargo-storage-solutions');
 Route::get('/exworks-solutions', [PageController::class, 'exworksSolutions'])->name('exworks-solutions');
 Route::get('/container-trading', [PageController::class, 'containerTrading'])->name('container-trading');
-Route::get('/container-bl-tracking', [PageController::class, 'containerBlTracking'])->name('container-bl-tracking');
 Route::get('/client-reg-login', [PageController::class, 'clientRegLogin'])->name('client-reg-login');
 Route::get('/freight-rate', [PageController::class, 'freightRate'])->name('freight-rate');
 Route::get('/get-quote', [PageController::class, 'getQuote'])->name('get-quote');
@@ -69,6 +68,7 @@ Route::middleware('guest')->group(function () {
     Route::post('login-post', [LoginController::class,'login'])->name('loginPost');
 });
 
+Route::get('/container-bl-tracking', [TrackingController::class, 'containerTracking'])->name('container-bl-tracking');
 Route::get('/vessel-schedule', [TrackingController::class, 'vesselSchedule'])->name('vesselSchedule');
 
 Route::get('/ports/search', [TrackingController::class, 'searchPort'])->name('ports.search');

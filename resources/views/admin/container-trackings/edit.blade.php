@@ -11,11 +11,15 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="wk_number">WK Number</label>
-                    <input type="text" name="wk_number" id="wk_number" class="form-control" value="{{ $containerTracking->wk_number }}" required>
+                    <label for="container_number">Container Number</label>
+                    <input type="text" name="container_number" id="container_number" class="form-control" value="{{ $containerTracking->container_number }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="origin_port_id">Select Origin Port</label>
+                    <label for="bl_number">BL Number</label>
+                    <input type="text" name="bl_number" id="bl_number" class="form-control" value="{{ $containerTracking->bl_number }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="origin_port_id">Select Port of Load</label>
                     <select name="origin_port_id" id="origin_port_id" class="form-control" required>
                         @foreach ($ports as $port)
                             <option value="{{ $port->id }}" {{ $port->id == $containerTracking->origin_port_id ? 'selected' : '' }}>
@@ -25,7 +29,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="destination_port_id">Select Destination Port</label>
+                    <label for="destination_port_id">Select Port of Discharge</label>
                     <select name="destination_port_id" id="destination_port_id" class="form-control" required>
                         @foreach ($ports as $port)
                             <option value="{{ $port->id }}" {{ $port->id == $containerTracking->destination_port_id ? 'selected' : '' }}>
@@ -35,32 +39,20 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="vsl_voy">Vessel Voyage</label>
-                    <input type="text" name="vsl_voy" id="vsl_voy" class="form-control" value="{{ $containerTracking->vsl_voy }}">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date" class="form-control" value="{{ $containerTracking->date }}">
                 </div>
                 <div class="form-group">
-                    <label for="rot_number">ROT Number</label>
-                    <input type="text" name="rot_number" id="rot_number" class="form-control" value="{{ $containerTracking->rot_number }}">
+                    <label for="container_details">Container Details</label>
+                    <textarea name="container_details" id="container_details" class="form-control">{{ $containerTracking->container_details }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="aejea">AE JEA</label>
-                    <input type="date" name="aejea" id="aejea" class="form-control" value="{{ $containerTracking->aejea }}">
-                </div>
-                <div class="form-group">
-                    <label for="qict">QICT</label>
-                    <input type="date" name="qict" id="qict" class="form-control" value="{{ $containerTracking->qict }}">
-                </div>
-                <div class="form-group">
-                    <label for="pict_kgtl">PICT KGTL</label>
-                    <input type="date" name="pict_kgtl" id="pict_kgtl" class="form-control" value="{{ $containerTracking->pict_kgtl }}">
+                    <label for="bl_details">BL Details</label>
+                    <textarea name="bl_details" id="bl_details" class="form-control">{{ $containerTracking->bl_details }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="remarks">Remarks</label>
                     <textarea name="remarks" id="remarks" class="form-control">{{ $containerTracking->remarks }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="final_loadlist_deadline">Final Loadlist Deadline</label>
-                    <input type="text" name="final_loadlist_deadline" id="final_loadlist_deadline" class="form-control" value="{{ $containerTracking->final_loadlist_deadline }}">
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
                 <a href="{{ route('admin.container-trackings.index') }}" class="btn btn-secondary">Cancel</a>

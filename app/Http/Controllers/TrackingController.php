@@ -11,31 +11,18 @@ use Illuminate\Http\Request;
 class TrackingController extends Controller
 {
 
-    public function vesselSchedule(Request $request)
+    public function containerTracking(Request $request)
     {
-        $origin = $request->input('origin');
-        $destination = $request->input('destination');
+        $container_number = $request->input('container_number');
 
         // Fetch Vessel Tracking and Container Tracking, eager load related Ports
-        $vesselTrackingResults = VesselTracking::with(['originPort', 'destinationPort'])
-            ->whereHas('originPort', function ($q) use($origin){
-                $q->where('name', 'like', "%$origin%");
-            })
-            ->whereHas('destinationPort', function ($q) use($destination){
-                $q->where('name', 'like', "%$destination%");
-            })
-            ->get();
+        $trackingResults = ContainerTracking::where('container_number', 'like', "%$container_number%")
+                                    ->orWhere('bl_number', 'like', "%$container_number%")
+                                    ->get();
 
-        $containerTrackingResults = ContainerTracking::with(['originPort', 'destinationPort'])
-            ->whereHas('originPort', function ($q) use($origin){
-                $q->where('name', 'like', "%$origin%");
-            })
-            ->whereHas('destinationPort', function ($q) use($destination){
-                $q->where('name', 'like', "%$destination%");
-            })
-            ->get();
+        
 
-        return view('pages.vessel_schedule', compact('vesselTrackingResults', 'containerTrackingResults', 'origin', 'destination'));
+        return view('pages.container-bl-tracking', compact('trackingResults', 'container_number'));
     }
 
     public function searchPort(Request $request)

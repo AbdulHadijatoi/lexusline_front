@@ -29,14 +29,12 @@ class ContainerTrackingController extends Controller
         $request->validate([
             'origin_port_id' => 'required|exists:ports,id',
             'destination_port_id' => 'required|exists:ports,id',
-            'wk_number' => 'required|string|max:255',
-            'vsl_voy' => 'required|string|max:255',
-            'rot_number' => 'required|string|max:255',
-            'aejea' => 'nullable|string|max:255',
-            'qict' => 'nullable|string|max:255',
-            'pict_kgtl' => 'nullable|string|max:255',
+            'container_number' => 'required|string|max:255',
+            'bl_number' => 'required|string|max:255',
+            'date' => 'required|string|max:255',
+            'container_details' => 'nullable',
+            'bl_details' => 'nullable',
             'remarks' => 'nullable|string',
-            'final_loadlist_deadline' => 'nullable|string|max:255',
         ]);
 
         ContainerTracking::create($request->all());
@@ -58,14 +56,12 @@ class ContainerTrackingController extends Controller
         $request->validate([
             'origin_port_id' => 'required|exists:ports,id',
             'destination_port_id' => 'required|exists:ports,id',
-            'wk_number' => 'required|string|max:255',
-            'vsl_voy' => 'required|string|max:255',
-            'rot_number' => 'required|string|max:255',
-            'aejea' => 'nullable|string|max:255',
-            'qict' => 'nullable|string|max:255',
-            'pict_kgtl' => 'nullable|string|max:255',
+            'container_number' => 'required|string|max:255',
+            'bl_number' => 'required|string|max:255',
+            'date' => 'required|string|max:255',
+            'container_details' => 'nullable',
+            'bl_details' => 'nullable',
             'remarks' => 'nullable|string',
-            'final_loadlist_deadline' => 'nullable|string|max:255',
         ]);
 
         $containerTracking = ContainerTracking::findOrFail($id);
@@ -85,19 +81,13 @@ class ContainerTrackingController extends Controller
 
     public function search(Request $request)
     {
-        $origin = $request->input('origin');
-        $destination = $request->input('destination');
+        $container_number = $request->input('container_number');
 
-        $trackingResults = ContainerTracking::where('origin', 'like', "%$origin%")
-            ->where('destination', 'like', "%$destination%")
+        $trackingResults = ContainerTracking::where('container_number', 'like', "%$container_number%")
+            ->orWhere('bl_number', 'like', "%$container_number%")
             ->get();
 
         return view('pages.container_tracking', compact('trackingResults'));
     }
 
-    public function getVesselDetails($id)
-    {
-        $tracking = ContainerTracking::with('vesselDetails')->findOrFail($id);
-        return response()->json($tracking->vesselDetails);
-    }
 }

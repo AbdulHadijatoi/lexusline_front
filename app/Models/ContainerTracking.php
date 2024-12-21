@@ -13,9 +13,7 @@ class ContainerTracking extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'aejea' => 'date',
-        'qict' => 'date',
-        'pict_kgtl' => 'date',
+        'date' => 'date',
     ];
 
     public function originPort(){

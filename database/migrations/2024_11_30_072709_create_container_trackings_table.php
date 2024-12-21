@@ -15,14 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('origin_port_id');
             $table->unsignedBigInteger('destination_port_id');
-            $table->string('wk_number');
-            $table->string('vsl_voy');
-            $table->string('rot_number');
-            $table->string('aejea')->nullable();
-            $table->string('qict')->nullable();
-            $table->string('pict_kgtl')->nullable();
+            $table->string('container_number');
+            $table->string('bl_number');
+            $table->string('date');
+            $table->text('container_details');
+            $table->text('bl_details');            
             $table->text('remarks')->nullable();
-            $table->string('final_loadlist_deadline')->nullable();
             $table->timestamps();
 
             $table->foreign('origin_port_id')->references('id')->on('ports')->onDelete('cascade');
