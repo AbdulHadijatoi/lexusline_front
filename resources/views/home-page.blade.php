@@ -133,6 +133,42 @@
         @endforeach
     @endif
 
+    @if($blogs && $blogs->count() > 4)
+    <div class="w-full">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-8 mb-12">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Latest Insights</h2>
+                <p class="mt-4 text-lg leading-4 text-gray-600">Stay updated with our latest insights and stories.</p>
+            </div>
+
+            <!-- Dynamic Blog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 mt-10">
+                @foreach ($blogs as $index => $blog)   
+                    @php
+                        $classes = '';
+                        if ($index == 0) {
+                            $classes = 'lg:col-span-2 lg:row-span-3';
+                        } elseif ($index == 1) {
+                            $classes = 'lg:col-span-3 lg:row-span-1';
+                        } else {
+                            $classes = 'lg:col-span-1 lg:row-span-2';
+                        }
+                    @endphp 
+                    @include('components.home-blog-card',[
+                        'card_image'=>$blog->image,
+                        'card_time'=>$blog->created_at,
+                        'card_link'=>$blog->slug,
+                        'card_title'=>$blog->title,
+                        'card_description'=>$blog->description,
+                    ])
+                @endforeach
+               
+            </div>
+        </div>
+    </div>
+@endif
+
+
     <div class="mx-auto px-5 md:px-0 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 mb-20">
         
         <h1 class="text-3xl sm:text-4xl font-light text-gray-800 mb-6">

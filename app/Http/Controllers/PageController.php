@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,10 @@ class PageController extends Controller {
         if($page){
             $pageContents = $page->pageContents;
         }
+
+        $blogs = Blog::latest('id')->limit(5)->get();
         // dd($pageContents->toArray());
-        return view('home-page', compact('pageContents'));
+        return view('home-page', compact('pageContents','blogs'));
     }
     
     public function CommonPage() {

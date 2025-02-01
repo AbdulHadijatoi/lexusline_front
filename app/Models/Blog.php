@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -25,5 +26,14 @@ class Blog extends Model
     
     public function blogContent(){
         return $this->hasOne(BlogContent::class, 'blog_id')->latest('id');
+    }
+
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:i:s', // Ensures consistent formatting
+    ];
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
     }
 }
