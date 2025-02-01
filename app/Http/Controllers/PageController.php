@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class PageController extends Controller {
     
     public function homePage() {
-        $data = [];
-        return view('home-page', $data);
+        $page = Page::with('pageContents')->where("slug",'/')->first();
+        
+        $pageContents = null;
+        if($page){
+            $pageContents = $page->pageContents;
+        }
+        // dd($pageContents->toArray());
+        return view('home-page', compact('pageContents'));
     }
     
     public function CommonPage() {

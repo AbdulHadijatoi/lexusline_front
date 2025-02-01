@@ -12,6 +12,7 @@ use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\TerminalController;
 use App\Http\Controllers\TrackingController;
 use App\Http\Controllers\VesselTrackingController;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 
@@ -110,3 +111,16 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('container-trackings', ContainerTrackingController::class);
 
 });
+
+// Route::get('/test', function () {
+//     $toEmail = 'abdulhadijatoi@gmail.com';  // Replace with the recipient's email
+//     $subject = 'Test Email';
+//     $messageBody = 'This is a test email sent from a Laravel web route.';
+
+//     Mail::raw($messageBody, function ($message) use ($toEmail, $subject) {
+//         $message->to($toEmail)
+//                 ->subject($subject);
+//     });
+
+//     return 'Test email sent successfully!';
+// });

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUsMail;
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SubscriberController extends Controller
 {
@@ -22,13 +24,22 @@ class SubscriberController extends Controller
     public function subscribe(Request $request)
     {
         $request->validate([
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'message' => 'nullable'
         ]);
+
         $email = $request->email;
+        $messageBody = $request->message ?? 'No additional message provided.';
+
         Subscriber::create([
             'email' => $email
         ]);
 
+        // Send email using the Mailable class
+        Mail::to('info@lexusline.co.uk')->send(new ContactUsMail($email, $messageBody));
+        // Mail::to('abdulhadijatoi@gmail.com')->send(new ContactUsMail($email, $messageBody));
+
         return redirect()->back()->with('success', 'Request submitted successfully!');
     }
+    
 }

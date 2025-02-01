@@ -44,30 +44,124 @@
                     <input type="text" name="footer_text" id="footer_text" class="form-control" value="{{ $settings->footer_text }}">
                 </div>
 
-                <!-- Home Section 1 Text -->
-                <div class="form-group mb-4">
-                    <label for="home_section_1_text">Home Section 1 Text</label>
-                    <input type="text" name="home_section_1_text" id="home_section_1_text" class="form-control" value="{{ $settings->home_section_1_text }}">
-                </div>
-
-                <!-- Home Insights Text -->
-                <div class="form-group mb-4">
-                    <label for="home_insights_text">Home Insights Text</label>
-                    <input type="text" name="home_insights_text" id="home_insights_text" class="form-control" value="{{ $settings->home_insights_text }}">
-                </div>
-
                 <!-- Choose Us Text -->
                 <div class="form-group mb-4">
                     <label for="choose_us_text">Choose Us Text</label>
                     <input type="text" name="choose_us_text" id="choose_us_text" class="form-control" value="{{ $settings->choose_us_text }}">
                 </div>
 
+                
+
+                <br>
+                <!-- Section Container -->
+                <div id="sections-container">
+                    @foreach($page->pageContents as $index => $content)
+                    <div class="section-content bg-light p-4 rounded mb-4" data-index="{{ $index }}">
+                        <h5 class="mb-3 font-weight-bold">Section {{ $index + 1 }}</h5>
+
+                        <input type="hidden" name="contents[{{ $index }}][id]" value="{{ $content->id }}">
+
+                        <!-- Section Title -->
+                        <div class="mb-3">
+                            <label for="contents[{{ $index }}][title]" class="form-label">Section Title</label>
+                            <input type="text" class="form-control" name="contents[{{ $index }}][title]" value="{{ $content->title }}">
+                        </div>
+
+                        <!-- Section Description -->
+                        <div class="mb-3">
+                            <label for="contents[{{ $index }}][description]" class="form-label">Section Description</label>
+                            <textarea name="contents[{{ $index }}][description]" class="form-control editor">{{ $content->description }}</textarea>
+                        </div>
+
+                        <!-- Section Image -->
+                        <div class="mb-3">
+                            <label for="contents[{{ $index }}][image]" class="form-label">Section Image</label>
+                            <input type="file" class="form-control" name="contents[{{ $index }}][image]">
+                        </div>
+
+                        @if($content->image)
+                            <img src="{{ asset('storage/' . $content->image) }}" alt="Content Image" width="100" class="mt-2">
+                        @endif
+
+                        <!-- Delete Section Button -->
+                        <button type="button" class="btn btn-danger remove-section mt-2">Delete Section</button>
+                    </div>
+                    @endforeach
+                </div>
+
+                <!-- Add Section Button -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" id="add-section" class="btn btn-primary">Add Content Section</button>
+                </div>
+
                 <!-- Submit Button -->
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Update Settings</button>
+                <div class="form-group my-4">
+                    <button type="submit" class="btn btn-success">Update Settings</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+    // Function to initialize CKEditor 5 on all textareas with the class 'editor'
+    function initializeCKEditor() {
+        document.querySelectorAll('textarea.editor').forEach(textarea => {
+            if (!textarea.classList.contains('ck-editor-initialized')) {
+                ClassicEditor.create(textarea)
+                    .then(editor => {
+                        textarea.editorInstance = editor;
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+                textarea.classList.add('ck-editor-initialized');
+            }
+        });
+    }
+
+    document.getElementById('add-section').addEventListener('click', function () {
+        let index = document.querySelectorAll('.section-content').length;
+        let sectionHTML = `
+            <div class="section-content bg-light p-4 rounded mb-4" data-index="${index}">
+                <h5 class="mb-3 font-weight-bold">Section ${index + 1}</h5>
+                <label for="contents[${index}][title]" class="form-label">Section Title</label>
+                <input type="text" class="form-control mb-3" name="contents[${index}][title]">
+                <label for="contents[${index}][description]" class="form-label">Section Description</label>
+                <textarea name="contents[${index}][description]" class="form-control editor mb-3"></textarea>
+                <label for="contents[${index}][image]" class="form-label">Section Image</label>
+                <input type="file" class="form-control mb-3" name="contents[${index}][image]">
+                <button type="button" class="btn btn-danger remove-section">Delete Section</button>
+            </div>
+        `;
+        document.getElementById('sections-container').insertAdjacentHTML('beforeend', sectionHTML);
+
+        // Re-initialize CKEditor on all .editor textareas
+        initializeCKEditor();
+        addRemoveEvent();
+    });
+
+    // Event to handle removing a section
+    function addRemoveEvent() {
+        document.querySelectorAll('.remove-section').forEach(button => {
+            button.addEventListener('click', function () {
+                const section = this.closest('.section-content');
+                const textarea = section.querySelector('.editor');
+
+                // Destroy CKEditor instance before removing the section
+                if (textarea.editorInstance) {
+                    textarea.editorInstance.destroy()
+                        .then(() => section.remove())
+                        .catch(error => console.error(error));
+                } else {
+                    section.remove();
+                }
+            });
+        });
+    }
+
+    // Initialize CKEditor on page load for existing textareas
+    initializeCKEditor();
+    addRemoveEvent();
+</script>
 @endsection
