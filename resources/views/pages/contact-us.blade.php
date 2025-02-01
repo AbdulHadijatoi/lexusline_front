@@ -7,24 +7,24 @@
     
         <div class="container mx-auto flex flex-col lg:flex-row items-center py-4 gap-8">
             <!-- Graphic Section -->
-            <div class="w-full lg:w-1/2 flex justify-center">
+            {{-- <div class="w-full lg:w-1/2 flex justify-center">
                 <img src="{{ asset('assets/images/contact-us.jpg') }}" alt="Person on couch with laptop" class="">
-            </div>
+            </div> --}}
 
             <!-- Newsletter Form Section -->
-            <div class="w-full lg:w-1/2 mx-auto px-6">
-                <h2 class="text-3xl font-semibold mb-4">If you need any help you can contact us</h2>
-                <p class="text-gray-600 mb-6">Receive news and insights that help you navigate supply chains, understand industry trends, and shape your logistics strategy.</p>
+            <div class="w-full lg:w-1/2 mx-auto px-6 py-4">
+                <h2 class="text-3xl font-semibold mb-4 text-center">Get in touch with Us</h2>
+                {{-- <p class="text-gray-600 mb-6">Receive news and insights that help you navigate supply chains, understand industry trends, and shape your logistics strategy.</p> --}}
                 
                 <form class="space-y-4" method="POST" action="{{ route('subscribe') }}">
                     @csrf
-                    <div>
+                    {{-- <div>
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                         <div class="mt-1 relative rounded-md shadow-sm">
                             <input type="text" id="name" name="name" required placeholder="Name" 
                                 class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                    </div>
+                    </div> --}}
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
                         <div class="mt-1 relative rounded-md shadow-sm">
@@ -35,18 +35,18 @@
                     <div>
                         <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
                         <div class="mt-1 relative rounded-md shadow-sm">
-                            <textarea id="message" name="message" required placeholder="Write message..." class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <textarea rows="6" id="message" name="message" required placeholder="Write message..." class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </textarea>
                         </div>
                     </div>
-                    <button type="submit" class="w-full bg-blue-900 text-white font-medium py-3 rounded-md hover:bg-blue-800">Submit Now</button>
+                    <button type="submit" class="w-full bg-blue-900 text-white font-medium py-3 rounded-md hover:bg-[var(--secondary)]">Submit Now</button>
                 </form>
 
-                <p class="text-xs text-gray-500 mt-4">
+                <p class="text-xs text-gray-500 mt-4 text-center">
                     By submitting this form, I agree to receive logistics-related news and marketing updates. I understand that I can opt out at any time by clicking the unsubscribe link.
                 </p>
-                <p class="text-xs text-gray-500 mt-2">
-                    To see how we process your personal data, please see our <a href="#" class="text-blue-500 hover-text-secondary">Privacy Policy</a>.
+                <p class="text-xs text-gray-500 mt-2 text-center">
+                    To see how we process your personal data, please see our <a href="{{ url('privacy-policy') }}" class="text-blue-500 hover-text-secondary">Privacy Policy</a>.
                 </p>
             </div>
         </div>
