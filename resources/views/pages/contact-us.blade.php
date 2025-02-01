@@ -3,10 +3,47 @@
 
 
 @section('content')
+        <section class="bg-gray-100">
+    <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl page-content">
+            <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+                <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900">Visit Our Location</h2>
+                    <p class="mt-4 text-lg text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="mt-16 lg:mt-20">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27221.67555688766!2d55.292650808743566!3d25.22976371916083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f134e609581e1%3A0x6947d732a1d95d91!2sAPI%20WORLD%20TOWER!5e0!3m2!1sen!2som!4v1738431710136!5m2!1sen!2som" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            {{-- <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11672.945750644447!2d-122.42107853750231!3d37.7730507907087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858070cc2fbd55%3A0xa71491d736f62d5c!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1619524992238!5m2!1sen!2sus"
+                                width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
+                        </div>
+                        <div>
+                            <div class="max-w-full mx-auto rounded-lg overflow-hidden">
+                                <div class="px-6 py-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Our Address</h3>
+                                    <p class="mt-1 text-gray-600">API World Tower Sheikh Zayed 232268, Dubai AE</p>
+                                </div>
+                                <div class="border-t border-gray-200 px-6 py-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Hours</h3>
+                                    <p class="mt-1 text-gray-600">Monday - Friday: 9am - 5pm</p>
+                                    <p class="mt-1 text-gray-600">Saturday: 10am - 4pm</p>
+                                    <p class="mt-1 text-gray-600">Sunday: Closed</p>
+                                </div>
+                                <div class="border-t border-gray-200 px-6 py-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Contact</h3>
+                                    <p class="mt-1 text-gray-600">Email: info@lexusline.co.uk</p>
+                                    <p class="mt-1 text-gray-600">Phone: +971 43204766</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+        </section>
     <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl page-content">
 
-         <!-- Display Success or Error Messages -->
-            
 
         <div class="container mx-auto flex flex-col lg:flex-row py-4 gap-8">
             <!-- Graphic Section -->
@@ -42,7 +79,7 @@
 
             <!-- Newsletter Form Section -->
             <div class="w-full lg:w-1/2 px-6 py-4">
-                <h2 class="text-3xl font-semibold mb-4">Get in touch with Us</h2>
+                <h2 class="text-3xl font-semibold mb-4">Contact Us</h2>
                 {{-- <p class="text-gray-600 mb-6">Receive news and insights that help you navigate supply chains, understand industry trends, and shape your logistics strategy.</p> --}}
                 
                 <form class="space-y-4" method="POST" action="{{ route('subscribe') }}">
