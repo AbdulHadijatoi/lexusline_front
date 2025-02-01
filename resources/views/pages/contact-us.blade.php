@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="bg-[#f8f9fa]">
-    <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl page-content py-10 text-center">
+    <div class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl page-content py-5 text-center">
         {{-- <h2 class="text-3xl font-semibold mb-4">Where you can find us</h2> --}}
         {{-- <p class="text-gray-600 mb-6">Receive news and insights that help you navigate supply chains, understand industry trends, and shape your logistics strategy.</p> --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
