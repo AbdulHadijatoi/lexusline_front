@@ -8,7 +8,7 @@
             <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
                 <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
                     <h2 class="text-3xl font-extrabold text-gray-900">Visit Our Location</h2>
-                    <p class="mt-4 text-lg text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="mt-4 text-lg text-gray-500">Easily Accessible Hubs for All Your Shipping Needs</p>
                 </div>
                 <div class="mt-16 lg:mt-20">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
